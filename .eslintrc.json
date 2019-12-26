@@ -1,0 +1,35 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier", "typescript", "prefer-arrow"],
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:prettier/recommended"],
+  "rules": {
+    "import/extensions": ["error", "ignorePackages", {
+      "ts": "never",
+      "tsx": "never",
+      "js": "never",
+      "jsx": "never"
+    }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
+    "prefer-arrow/prefer-arrow-functions": ["error"],
+    "prettier/prettier": ["error"],
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "react/static-property-placement": ["error", "static public field"],
+    "react/sort-comp": [
+      1,
+      { "order": ["type-annotations", "lifecycle", "everything-else", "render"] }
+    ]
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
